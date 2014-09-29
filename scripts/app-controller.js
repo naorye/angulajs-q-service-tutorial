@@ -78,10 +78,10 @@ window.module.controller('appController', ['$scope', '$q', 'appService', functio
             reservationPromise,
             photoPromise
         ]).then(function() {
-            var longitude = $scope.coords && $scope.coords.longitude;
-            var latitude = $scope.coords && $scope.coords.latitude;
-            var reservationId = $scope.reservation.token;
-            var photoUrl = $scope.photoUrl;
+            var longitude = $scope.data.coords && $scope.data.coords.longitude;
+            var latitude = $scope.data.coords && $scope.data.coords.latitude;
+            var reservationId = $scope.data.reservation.token;
+            var photoUrl = $scope.data.photoUrl;
             clearSubmitError();
             doRegistration(longitude, latitude, reservationId, photoUrl);
         }, function(error) {
