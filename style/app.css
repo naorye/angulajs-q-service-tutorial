@@ -1,0 +1,118 @@
+/*.filereader .field.photo {
+    height: 100px;
+    width: 100px;
+    background: no-repeat center / cover;
+}
+.field.reserved:after {
+    content: '';
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAQAAADc68WyAAAAeElEQVR4AWNAA2JAiBPEM1xg+AeEF4AsLCAFKDWDwRMIZwBZKejSkkDBSihbC8j6BxRBATEMXxi4GRIZmBhSgZLJQF4MqoJ+hhMMWQz/GQ4BpW8wSAB5/dhM2AJUcotBioEVYgKmG9gZehikgTy4Gwj7gnA4EAxJAJo3KiMMMhHxAAAAAElFTkSuQmCCd08024b4035aae3d2bf83cc01e478c2b') no-repeat center / cover;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+}*/
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/DXI1ORHCpsQm3Vp6mXoaTaRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/k3k702ZOKiLJc3WVjuplzKRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Open Sans Light Italic'), local('OpenSansLight-Italic'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/PRmiXeptR36kaC0GEAetxvR_54zmj3SbGZQh3vCOwvY.woff) format('woff');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/ODelI1aHBYDBqgeIAH2zlNHq-FFgoDNV3GTKpHwuvtI.woff) format('woff');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/toadOcfmlt9b38dHJxOBGIqjGYJUyOXcBwUQbRaNH6c.woff) format('woff');
+}
+
+
+
+html, body {
+  font-size: 15px;
+}
+
+body {
+  font-family: 'Open Sans',
+               'Helvetica Neue',
+               'Helvetica',
+               'Arial',
+               sans-serif;
+  background: #FCFCFC url(/images/bg.jpg) repeat;
+  margin: 10px;
+  padding: 10px;
+  color: #555555;
+  min-width: 320px;
+}
+
+.username.field .ban.circle.icon, .username.field .ui.red.label.pointing.above {
+    display: none;
+}
+.username.field.error .ban.circle.icon, .username.field.error .ui.red.label.pointing.above {
+    display: inline-block;
+}
+
+.username.field.error .checkmark.icon {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+.user-photo #file {
+    display: none;
+}
+
+.user-photo .ui.segment {
+    display: block;
+    height: 180px;
+    width: 180px;
+    overflow: hidden;
+}
+
+.user-photo .ui.image {
+    height: 100%;
+    width: 100%;
+}
+
+.user-photo.field .ui.red.label {
+    display: none;
+}
+
+.user-photo.field.error .ui.red.label {
+    display: inline-block;
+}
+
+.user-photo.field.error .ui.green.label {
+    display: block;
+}
+
+
+

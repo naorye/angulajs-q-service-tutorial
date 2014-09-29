@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        window.angular || document.write('<script src="scripts/libs/jquery.js"><\/script>');
+    </script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+    <script type="text/javascript">
+        window.angular || document.write('<script src="scripts/libs/angular.js"><\/script>');
+    </script>
+
+    <link rel="stylesheet" href="style/semantic.css" />
+    <link rel="stylesheet" href="style/app.css" />
+</head>
+<body ng-app="demo-app">
+    <form class="ui form segment" ng-controller="appController">
+        <div class="two fields">
+            <div class="field">
+                <label for="longitude">Longitude</label>
+                <input id="longitude" type="text" readonly="readonly" ng-model="data.coords.longitude" placeholder="No Longitude" />
+            </div>
+            <div class="field">
+                <label for="latitude">Latitude</label>
+                <input id="latitude" type="text" readonly="readonly" ng-model="data.coords.latitude" placeholder="No Latitude" />
+            </div>
+        </div>
+        <div class="field username" ng-class="{ error: data.errors.username }">
+            <label for="username">User Name</label>
+            <div class="ui labeled icon input">
+                <input id="username" type="text" ng-model="data.username" ng-change="reserveUsername()" placeholder="User Name" />
+                <div class="ui red label pointing above" ng-bind="data.errors.username"></div>
+                <i class="circular ban circle icon"></i>
+                <i class="circular checkmark icon" ng-if="data.reservation"></i>
+                <div class="ui corner label">
+                    <i class="icon asterisk"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="inline field user-photo" ng-class="{ error: data.errors.photo }">
+            <label for="file" class="ui icon button">
+                <i class="file icon"></i>
+                Select Photo
+            </label>
+            <input type="file" id="file" file-path-changed="fileSelected(files)">
+            <span class="ui red label" ng-bind="data.errors.photo"></span>
+            <span class="ui green label" ng-if="data.photoUrl" ng-bind="data.photoUrl"></span>
+            <div class="ui segment" ng-if="data.photoData">
+                <img class="rounded ui image" ng-src="{{ data.photoData }}" />
+            </div>
+        </div>
+
+        <div class="field">
+            <div class="ui blue submit button" ng-click="register()">Register</div>
+        </div>
+
+        <div class="field">
+            <span class="ui red label" ng-if="data.errors.submit" ng-bind="data.errors.submit"></span>
+            <span class="ui green label" ng-if="data.success">
+                Registration Seccess with {{data.coords.longitude ? 'longitude =' + data.coords.longitude : 'no longitude' }},
+                {{data.coords.latitude ? 'latitude =' + data.coords.latitude : 'no latitude' }},
+                username = {{data.username}}, photo url = {{data.photoUrl}}
+            </span>
+        </div>
+    </form>
+
+    <script type="text/javascript" src="scripts/module.js"></script>
+    <script type="text/javascript" src="scripts/directives.js"></script>
+    <script type="text/javascript" src="scripts/app-service.js"></script>
+    <script type="text/javascript" src="scripts/app-controller.js"></script>
+</body>
+</html>
