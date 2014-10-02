@@ -42,7 +42,7 @@ window.module.factory('appService', ['jquery', '$http', '$q', function($, $http,
     function reserveUsername(username) {
         // return $http.post('<endpoint for username reservation action>', {
         //     username: username
-        // }).$promise;
+        // });
         var deferred = $q.defer();
         setTimeout(function() {
             if (reserveCount > 0 && reserveCount % 3 === 0) {
